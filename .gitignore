@@ -1,0 +1,30 @@
+# Virtual machine files
+*.ova
+*.ovf
+*.vdi
+*.vmdk
+*.vhd
+*.vhdx
+*.qcow2
+*.vbox
+*.vbox-prev
+
+# Temporary and backup files
+*.tmp
+*.bak
+*.log
+*.swp
+*~
+
+# Secrets
+.env
+*.pem
+*.key
+id_rsa
+id_ed25519
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
