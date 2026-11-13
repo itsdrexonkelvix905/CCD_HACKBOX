@@ -28,3 +28,47 @@ __pycache__/
 *.pyc
 .venv/
 venv/
+
+# ==========================================
+# CCD_HACKBOX SECURITY RULES
+# ==========================================
+
+# Real challenge flags
+/flags/*
+!/flags/README.md
+
+# Private walkthroughs and solutions
+/walkthroughs/*
+!/walkthroughs/README.md
+
+# Instructor-only materials
+/instructor-private/
+
+# Secret files and credentials
+*.secret
+*.flag
+flag.txt
+user.txt
+root.txt
+.env
+.env.*
+*.pem
+*.key
+id_rsa
+id_ed25519
+
+# Virtual machine files
+*.ova
+*.ovf
+*.vdi
+*.vmdk
+*.vhd
+*.vhdx
+*.qcow2
+
+# Logs and temporary files
+*.log
+*.tmp
+__pycache__/
+venv/
+.venv/

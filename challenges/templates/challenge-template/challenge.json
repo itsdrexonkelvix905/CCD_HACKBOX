@@ -1,0 +1,12 @@
+{
+  "id": "CHALLENGE-ID",
+  "name": "Challenge Name",
+  "difficulty": "beginner",
+  "category": "network",
+  "status": "planned",
+  "target": "CCD_HACKBOX",
+  "flag_type": "dynamic",
+  "flag_location": "inside_target_vm",
+  "author": "CCD",
+  "version": "0.1"
+}
