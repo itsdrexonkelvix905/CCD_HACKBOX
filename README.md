@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="assets/ccd-logo.png" alt="Official Cybersecurity Club DIT logo" width="168" />
+  <img src="assets/ccd-logo.png" alt="Official Cybersecurity Club DIT Logo" width="150">
 </p>
 
 <p align="center">
@@ -8,7 +8,7 @@
 </p>
 
 <h1 align="center">
-  <img src="assets/ccd-hackbox-wordmark.svg" alt="CCD_HACKBOX" width="520" />
+  <img src="assets/ccd-hackbox-wordmark.svg" alt="CCD_HACKBOX" width="520">
 </h1>
 
 <p align="center">
@@ -16,145 +16,219 @@
 </p>
 
 <p align="center">
-  <img alt="Club: Cybersecurity DIT" src="https://img.shields.io/badge/Club-Cybersecurity%20DIT-8B3DFF?style=flat-square&labelColor=10121C" />
-  <img alt="Product: CCD_HACKBOX" src="https://img.shields.io/badge/Product-CCD__HACKBOX-8B3DFF?style=flat-square&labelColor=10121C" />
-  <img alt="Platform: Linux" src="https://img.shields.io/badge/Platform-Linux-8B3DFF?style=flat-square&labelColor=10121C" />
-  <img alt="Use: Authorized Lab" src="https://img.shields.io/badge/Use-Authorized%20Lab-8B3DFF?style=flat-square&labelColor=10121C" />
-  <img alt="Status: In Development" src="https://img.shields.io/badge/Status-In%20Development-8B3DFF?style=flat-square&labelColor=10121C" />
+  <img src="https://img.shields.io/badge/Organization-Cybersecurity%20Club%20DIT-8B3DFF?style=flat-square&labelColor=10121C" alt="Organization">
+  <img src="https://img.shields.io/badge/Platform-Ubuntu%20Server-8B3DFF?style=flat-square&labelColor=10121C" alt="Platform">
+  <img src="https://img.shields.io/badge/Hypervisor-VirtualBox-8B3DFF?style=flat-square&labelColor=10121C" alt="Hypervisor">
+  <img src="https://img.shields.io/badge/Use-Authorized%20Training-8B3DFF?style=flat-square&labelColor=10121C" alt="Authorized Training">
+  <img src="https://img.shields.io/badge/Status-In%20Development-8B3DFF?style=flat-square&labelColor=10121C" alt="Development Status">
 </p>
 
 <p align="center">
-  <img src="assets/ccd-hackbox-ova.svg" alt="CCD_HACKBOX virtual machine package illustration" width="720" />
+  <img src="assets/ccd-hackbox-ova.svg" alt="CCD_HACKBOX Virtual Appliance Illustration" width="680">
 </p>
 
 ---
 
-## Documentation
+## Table of Contents
 
 - [Overview](#overview)
-- [Objectives](#objectives)
-- [Product Architecture](#product-architecture)
+- [Project Objectives](#project-objectives)
+- [System Architecture](#system-architecture)
 - [Learning Modules](#learning-modules)
-- [Installation](#installation)
+- [Lab Environment](#lab-environment)
+- [Getting Started](#getting-started)
 - [Network Configuration](#network-configuration)
 - [Repository Structure](#repository-structure)
-- [Screenshots](#screenshots)
-- [Security and Lab Boundaries](#security-and-lab-boundaries)
-- [Project Status](#project-status)
-- [Brand and Credits](#brand)
+- [Challenge Framework](#challenge-framework)
+- [Security Guidelines](#security-guidelines)
+- [Project Roadmap](#project-roadmap)
+- [Contributing](#contributing)
+- [Disclaimer](#disclaimer)
+- [Credits](#credits)
 
 ---
 
 ## Overview
 
-CCD_HACKBOX is an intentionally vulnerable Linux virtual machine developed for the Cybersecurity Club DIT.
+**CCD_HACKBOX** is an intentionally vulnerable Linux virtual machine developed by Cybersecurity Club DIT for practical cybersecurity education.
 
-The project provides a controlled environment where students and cybersecurity enthusiasts can develop practical skills through hands-on security exercises.
+The project provides a controlled and isolated environment where students can explore common security weaknesses, understand how vulnerabilities affect Linux systems and services, and practice penetration testing techniques.
 
-It is designed to support learning in network security, web application security, service enumeration, vulnerability assessment, exploitation fundamentals, and Linux privilege escalation.
+Built around Ubuntu Server, the appliance is designed to support hands-on exercises covering network security, web application security, service enumeration, vulnerability assessment, exploitation fundamentals, and Linux privilege escalation.
 
-The appliance is intended for authorized training, supervised exercises, and isolated cybersecurity labs.
+CCD_HACKBOX aims to make practical cybersecurity training more accessible through a portable virtual machine and structured learning challenges.
 
-## Objectives
+## Project Objectives
 
 - Provide a practical environment for cybersecurity education.
-- Help students understand common Linux and network security weaknesses.
-- Develop penetration testing and vulnerability assessment skills.
-- Provide realistic exercises based on documented security vulnerabilities.
-- Encourage responsible disclosure and ethical security practices.
-- Support collaborative cybersecurity training within CYBERSECURITY CLUB DIT.
+- Develop hands-on penetration testing and vulnerability assessment skills.
+- Demonstrate common Linux and network service misconfigurations.
+- Help students understand real-world security vulnerabilities.
+- Provide structured challenges for different experience levels.
+- Promote ethical hacking and responsible security practices.
+- Support collaborative cybersecurity learning within CYBERSECURITY CLUB DIT.
 
-## Product Architecture
+## System Architecture
 
-CCD_HACKBOX is designed as a Linux virtual machine distributed in Open Virtualization Format (OVA).
+CCD_HACKBOX uses Ubuntu Server as its target operating system and is designed to operate as a virtual machine.
 
-The intended lab environment consists of:
+The recommended training environment consists of:
 
-| Component | Role |
+| Component | Description |
 |---|---|
-| Kali Linux | Attacker and testing machine |
-| Ubuntu Server | CCD_HACKBOX vulnerable target |
-| VirtualBox | Virtualization platform |
-| Host-only Network | Isolated communication between lab machines |
-| CCD_HACKBOX OVA | Portable virtual appliance for distribution |
+| Kali Linux | Attacker and security testing machine |
+| Ubuntu Server | CCD_HACKBOX target environment |
+| Oracle VirtualBox | Virtualization platform |
+| Host-only Network | Isolated communication between virtual machines |
+| CCD_HACKBOX OVA | Portable appliance for distribution |
 
-<p align="center">
-  <img src="assets/diagrams/network-topology.png" alt="CCD_HACKBOX network topology" width="760" />
-</p>
+### Network Architecture
+
+```text
++----------------------+
+|      Kali Linux      |
+|   Attacker Machine   |
++----------------------+
+           |
+           |
++----------------------+
+|   Host-only Network  |
+|   Isolated Lab LAN   |
++----------------------+
+           |
+           |
++----------------------+
+|     CCD_HACKBOX      |
+|    Ubuntu Server     |
+|   Vulnerable Target  |
++----------------------+
+```
+
+The lab is intended to operate independently of production networks and public-facing infrastructure.
 
 ## Learning Modules
 
-The project is organized into the following training areas:
+CCD_HACKBOX is organized into practical cybersecurity learning areas.
 
-| Module | Learning Area |
+| Module | Description |
 |---|---|
-| Network Security | Reconnaissance, port scanning and enumeration |
+| Network Security | Network discovery, port scanning and service enumeration |
 | Web Security | Common web application vulnerabilities |
-| FTP Security | FTP service weaknesses and misconfigurations |
+| FTP Security | FTP service enumeration and misconfigurations |
 | SSH Security | SSH configuration and authentication weaknesses |
 | Database Security | Database enumeration and access control |
-| Linux Privilege Escalation | Linux permissions, SUID, sudo and capabilities |
-| CVE Labs | Practical exercises based on verified CVEs |
+| Linux Privilege Escalation | Linux permissions, SUID, sudo, cron and capabilities |
+| CVE Labs | Practical exercises based on verified security vulnerabilities |
 
-**Note:** Module availability depends on implementation and testing status. Planned exercises are not necessarily available in the current VM.
+Each module is intended to include learning objectives, prerequisites, setup instructions, practical exercises, verification procedures and references.
 
-## Installation
+Module availability depends on implementation and testing progress.
 
-The final appliance is intended to be distributed as:
+## Lab Environment
+
+The recommended environment includes:
+
+- Kali Linux as the testing machine.
+- CCD_HACKBOX as the vulnerable target.
+- Oracle VirtualBox for virtualization.
+- A dedicated Host-only network for communication.
+- Sufficient memory and storage for both virtual machines.
+
+The exact resource requirements will be documented after appliance testing.
+
+## Getting Started
+
+### Option 1: Import the OVA Appliance
+
+The intended distribution format is:
 
 `CCD_HACKBOX.ova`
 
-Once a tested release is published:
+When a tested OVA release becomes available:
 
-1. Download the OVA from the project's GitHub Releases.
+1. Download the appliance from the project's GitHub Releases.
 2. Open Oracle VirtualBox.
 3. Select **File → Import Appliance**.
-4. Select the downloaded OVA.
-5. Review the virtual machine settings.
-6. Configure an isolated Host-only network.
+4. Choose `CCD_HACKBOX.ova`.
+5. Review the virtual machine configuration.
+6. Configure the recommended isolated network.
 7. Start the virtual machine.
 
-Do not import or run an untrusted appliance on a production network.
+### Option 2: Automated Installation
+
+An automated installation method is planned for users who prefer to configure a clean Ubuntu Server installation.
+
+The installer will be documented separately once its implementation and verification are complete.
 
 ## Network Configuration
 
-The recommended lab topology is:
-
-```text
-Kali Linux
-    |
-    |
-Host-only Network
-    |
-    |
-CCD_HACKBOX
-(Ubuntu Server)
-```
+A dedicated Host-only network is recommended for the lab.
 
 Recommended configuration:
 
-- Use a VirtualBox Host-only Adapter for the lab.
-- Keep the vulnerable target isolated from production networks.
-- Use NAT temporarily only when internet access is needed for controlled updates.
-- Do not use Bridged Networking for the vulnerable appliance.
-- Do not expose vulnerable services to the public internet.
+- Use a VirtualBox Host-only Adapter.
+- Keep the vulnerable target isolated.
+- Configure the attacker and target to communicate over the lab network.
+- Use NAT only when temporary internet access is required for controlled updates.
+- Avoid Bridged Networking.
+- Never expose vulnerable services directly to the public internet.
 
 ## Repository Structure
 
 ```text
 CCD_HACKBOX/
 │
-├── assets/              # Branding, screenshots and diagrams
-├── docs/                # Project and installation documentation
-├── config/              # Service and system configurations
-├── scripts/             # Setup, verification and reset scripts
-├── modules/             # Cybersecurity learning modules
-├── challenges/          # Practical training challenges
-├── flags/               # Flag management documentation
-├── hints/               # Challenge hints
-├── walkthroughs/        # Learning walkthroughs
-├── instructor-private/  # Private instructor resources
-├── releases/            # Release documentation
+├── assets/
+│   ├── branding/
+│   ├── screenshots/
+│   ├── diagrams/
+│   ├── icons/
+│   └── banners/
+│
+├── docs/
+│   ├── deployment/
+│   ├── architecture/
+│   ├── INSTALLATION.md
+│   ├── NETWORK-SETUP.md
+│   ├── STUDENT-GUIDE.md
+│   └── PRIVILEGE-ESCALATION.md
+│
+├── config/
+│   ├── network/
+│   ├── services/
+│   ├── apache/
+│   ├── ssh/
+│   ├── ftp/
+│   ├── database/
+│   └── system/
+│
+├── scripts/
+│   ├── setup/
+│   ├── verification/
+│   ├── reset/
+│   └── utilities/
+│
+├── modules/
+│   ├── network-security/
+│   ├── web-security/
+│   ├── ftp-security/
+│   ├── ssh-security/
+│   ├── database-security/
+│   ├── linux-privesc/
+│   └── cve-labs/
+│
+├── challenges/
+│   ├── templates/
+│   ├── beginner/
+│   ├── intermediate/
+│   ├── advanced/
+│   └── expert/
+│
+├── flags/
+├── hints/
+├── walkthroughs/
+├── instructor-private/
+├── releases/
 │
 ├── README.md
 ├── LICENSE
@@ -163,72 +237,108 @@ CCD_HACKBOX/
 └── .gitignore
 ```
 
-## Screenshots
+## Challenge Framework
 
-Screenshots will document the actual appliance and its practical exercises.
+Challenges are intended to be organized by difficulty.
 
-<p align="center">
-  <img src="assets/screenshots/ubuntu-server.png" alt="Ubuntu Server environment" width="720" />
-</p>
+| Level | Intended Focus |
+|---|---|
+| Beginner | Basic reconnaissance and service enumeration |
+| Intermediate | Common service and web vulnerabilities |
+| Advanced | Multi-step exploitation and privilege escalation |
+| Expert | Complex vulnerability chains and advanced assessment |
 
-<p align="center">
-  <em>Ubuntu Server environment — replace with an actual project screenshot.</em>
-</p>
+A typical challenge directory may contain:
 
-<p align="center">
-  <img src="assets/screenshots/nmap-scan.png" alt="Network enumeration demonstration" width="720" />
-</p>
+```text
+challenge-name/
+├── README.md
+├── challenge.json
+├── setup.sh
+├── verify.sh
+├── hints.md
+└── references.md
+```
 
-<p align="center">
-  <em>Network enumeration — replace with an actual lab screenshot.</em>
-</p>
+Challenge flags and instructor-only solutions must not be exposed in the public source repository.
 
-## Security and Lab Boundaries
+## Security Guidelines
 
-CCD_HACKBOX intentionally contains vulnerable services and configurations.
+CCD_HACKBOX intentionally includes vulnerable components.
 
-Users must follow these rules:
+To use the appliance responsibly:
 
-- Use the appliance only for authorized cybersecurity training.
-- Run it within an isolated virtual lab.
-- Never connect it directly to production networks.
-- Never expose intentionally vulnerable services to the public internet.
-- Do not target systems, accounts, or data without permission.
-- Keep private flags, credentials and instructor-only materials out of the public repository.
-- Take snapshots before performing potentially destructive exercises.
+1. Run it only in an authorized training environment.
+2. Use an isolated virtual network.
+3. Never connect vulnerable services to production infrastructure.
+4. Do not expose the appliance to the public internet.
+5. Do not test systems or networks without explicit authorization.
+6. Take virtual machine snapshots before potentially destructive exercises.
+7. Keep credentials, private flags and sensitive configuration files out of public repositories.
 
-## Project Status
+## Project Roadmap
 
 CCD_HACKBOX is under active development.
 
-The project will progress through:
-
-- [x] Initial repository structure
-- [x] Core documentation structure
-- [ ] Ubuntu Server lab configuration
-- [ ] Vulnerable service deployment
-- [ ] Practical challenge implementation
-- [ ] Challenge verification and testing
-- [ ] OVA packaging and validation
+- [x] Initial repository creation
+- [x] Core project directory structure
+- [x] Initial documentation framework
+- [ ] Ubuntu Server appliance validation
+- [ ] Network and service configuration
+- [ ] Vulnerable service implementation
+- [ ] Network security challenges
+- [ ] Web security challenges
+- [ ] FTP and SSH challenges
+- [ ] Database security challenges
+- [ ] Linux privilege escalation challenges
+- [ ] Verified CVE-based exercises
+- [ ] Automated challenge verification
+- [ ] OVA packaging and testing
 - [ ] Public release
 
-Only completed and tested components should be marked as available.
+Only verified and completed components should be marked as implemented.
 
-## Brand and Credits
+## Contributing
 
-CCD_HACKBOX is developed under Cybersecurity Club DIT.
+Contributions are welcome from members and collaborators interested in cybersecurity education.
 
-The official club logo is retained in its original form and proportions. The product uses a purple-on-near-black visual identity.
+Before contributing:
 
-| File | Role |
-|---|---|
-| `assets/ccd-logo.png` | Official club logo |
-| `assets/ccd-logo.jpeg` | Original supplied logo file |
-| `assets/ccd-hackbox-wordmark.svg` | CCD_HACKBOX wordmark |
-| `assets/ccd-hackbox-ova.svg` | Appliance package illustration |
+- Review the project documentation.
+- Follow the repository structure.
+- Use verified technical references.
+- Document changes and dependencies.
+- Test scripts and configurations in an isolated environment.
+- Never submit real credentials, private flags or unauthorized data.
 
-**Developed for cybersecurity education by CYBERSECURITY CLUB DIT.**
+See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
+
+## Disclaimer
+
+CCD_HACKBOX is developed exclusively for authorized cybersecurity education, controlled laboratory exercises and research.
+
+The project maintainers do not authorize the use of this appliance against systems, networks, accounts or data without explicit permission.
+
+Users are responsible for complying with applicable laws, institutional policies and ethical cybersecurity practices.
+
+## Credits
+
+Developed by **CYBERSECURITY CLUB DIT**.
+
+The official club logo is retained in its original form and proportions.
+
+Product visual identity:
+
+- Background: `#08080D`
+- Surface: `#10121C`
+- Primary: `#8B3DFF`
+- Text: `#FFFFFF`
+- Secondary text: `#A0A0B0`
 
 <p align="center">
-  <strong>Learn. Practice. Secure.</strong>
+  <strong>CYBERSECURITY CLUB DIT</strong>
+</p>
+
+<p align="center">
+  Learn. Practice. Secure.
 </p>
