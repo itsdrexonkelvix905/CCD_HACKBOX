@@ -1,63 +1,23 @@
-# Virtual machine files
-*.ova
-*.ovf
-*.vdi
-*.vmdk
-*.vhd
-*.vhdx
-*.qcow2
-*.vbox
-*.vbox-prev
 
-# Temporary and backup files
-*.tmp
-*.bak
-*.log
-*.swp
-*~
+# Instructor-only and private materials
+/flags/
+/walkthroughs/
+/credentials/
+/private-keys/
+/validation/
+/backups/
 
-# Secrets
-.env
-*.pem
-*.key
-id_rsa
-id_ed25519
-
-# Python
-__pycache__/
-*.pyc
-.venv/
-venv/
-
-# ==========================================
-# CCD_HACKBOX SECURITY RULES
-# ==========================================
-
-# Real challenge flags
-/flags/*
-!/flags/README.md
-
-# Private walkthroughs and solutions
-/walkthroughs/*
-!/walkthroughs/README.md
-
-# Instructor-only materials
-/instructor-private/
-
-# Secret files and credentials
-*.secret
-*.flag
-flag.txt
-user.txt
-root.txt
+# Sensitive files
 .env
 .env.*
 *.pem
 *.key
-id_rsa
-id_ed25519
+*.p12
+*.pfx
+*.secret
+*.token
 
-# Virtual machine files
+# Virtual machine artifacts
 *.ova
 *.ovf
 *.vdi
@@ -66,9 +26,31 @@ id_ed25519
 *.vhdx
 *.qcow2
 
-# Logs and temporary files
+# Logs
 *.log
+logs/
+
+# Temporary files
 *.tmp
+*.temp
+*.swp
+*.bak
+*~
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor and IDE files
+.vscode/
+.idea/
+
+# Python
 __pycache__/
-venv/
-.venv/
+*.py[cod]
+.pytest_cache/
+
+# Node.js
+node_modules/
+npm-debug.log*
